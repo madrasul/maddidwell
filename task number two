@@ -1,0 +1,12 @@
+# task1.py - Function that accepts arbitrary keyword arguments
+
+def accept_named_args(**kwargs):
+    """
+    Accepts an arbitrary number of named arguments and prints them.
+    """
+    for key, value in kwargs.items():
+        print(f"Key: {key} -> Value: {value}")
+
+# Example usage
+if __name__ == "__main__":
+    accept_named_args(name="Alice", age=25, city="New York")
