@@ -1,12 +1,20 @@
-# task1.py - Function that accepts arbitrary keyword arguments
+# Task 2
 
-def accept_named_args(**kwargs):
-    """
-    Accepts an arbitrary number of named arguments and prints them.
-    """
+def typeBasedTransformer(**kwargs):
+
+    transformed = {}
     for key, value in kwargs.items():
-        print(f"Key: {key} -> Value: {value}")
-
-# Example usage
-if __name__ == "__main__":
-    accept_named_args(name="Alice", age=25, city="New York")
+        if isinstance(value, (int, float)):
+            transformed[key] = value ** 2
+        elif isinstance(value, str):
+            transformed[key] = value[::-1]
+        elif isinstance(value, bool):
+            transformed[key] = not value
+        elif isinstance(value, (list, tuple)):
+            transformed[key] = value[::-1]
+        elif isinstance(value, dict) and len(set(value.values())) == len(value):
+            transformed[key] = {v: k for k, v in value.items()}
+        else:
+            transformed[key] = value
+    return transformed
+```
