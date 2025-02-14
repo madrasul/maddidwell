@@ -1,3 +1,6 @@
+# Task 1
+Create a function named `kwargsAcceptFun` that accepts an arbitrary number of named arguments and prints them in a structured format. 
 def kwargsAcceptFun(**kwargs):
+    """Function that accepts arbitrary keyword arguments and prints them."""
     for key, value in kwargs.items():
         print(f"{key}: {value}")
